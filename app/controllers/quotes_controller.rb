@@ -28,7 +28,12 @@ class QuotesController < Rulers::Controller
   def show
     quote = FileModel.find(params["id"])
     ua = request.user_agent
-    render :quote, :obj => quote, :ua => ua
+    render_response :quote, :obj => quote, :ua => ua
+  end
+
+  def view_test
+    @noun = "roller skating"
+    render :view_test    
   end
 
   def update
